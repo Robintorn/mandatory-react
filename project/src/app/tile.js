@@ -18,7 +18,7 @@ import React from 'react';
 
 export default function Tile(props){
     return (
-      <button style={props.winner} className={props.class} onClick={props.onClick}>
+      <button className={props.class} onClick={props.onClick}>
         {props.value}
       </button>
     );

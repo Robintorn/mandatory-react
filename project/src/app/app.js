@@ -52,7 +52,7 @@ export default class Game extends React.Component {
     return (
       <Tile 
       onClick={() => this.handleClick(i)} 
-      value={this.state.squares[i]} class={this.state.class[i]} />
+      value={this.state.squares[i]} class={this.state.class[i]}/>
     );
   }
 
@@ -107,8 +107,7 @@ export default class Game extends React.Component {
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         if(squares[a] === 'X'){
           return 'Player 1';
-        }
-        else{
+        }else{
           return 'Player 2';
         }
       } 
