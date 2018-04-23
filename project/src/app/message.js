@@ -9,6 +9,6 @@ import React from 'react';
 
 export default function Message(props){
   return (
-    <div>To be implemented...</div>
+    <div>Next player: X</div>
   );
 }

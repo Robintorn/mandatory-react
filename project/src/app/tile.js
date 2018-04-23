@@ -17,7 +17,9 @@ The tile should render with the classes...
 import React from 'react';
 
 export default function Tile(props){
-  return (
-    <div>To be implemented...</div>
-  );
+    return (
+      <button className="tile plr1" onClick={props.onClick}>
+        {props.value}
+      </button>
+    );
 }
