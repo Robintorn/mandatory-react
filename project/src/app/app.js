@@ -20,17 +20,28 @@ export default class Game extends React.Component {
   state = {
     squares: Array(9).fill(null),
     xIsNext: true,
+    class: Array(9).fill(null)
   }
 
   handleClick(i) {
     const squares = this.state.squares.slice();
+    const klass = this.state.class.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+
+    if(this.state.xIsNext){
+      klass[i] = "tile plr1";
+      squares[i] = 'X';  
+    }else{
+      klass[i] = "tile plr2";
+      squares[i] = 'O';
+    }
+
     this.setState({
       squares: squares,
       xIsNext: !this.state.xIsNext,
+      class: klass
     });
   }
 
@@ -38,7 +49,7 @@ export default class Game extends React.Component {
     return (
       <Tile 
       onClick={() => this.handleClick(i)} 
-      value={this.state.squares[i]} />
+      value={this.state.squares[i]} class={this.state.class[i]}/>
     );
   }
 
@@ -48,7 +59,7 @@ export default class Game extends React.Component {
     if (winner) {
       status = 'Winner: ' + winner;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'Player ' + (this.state.xIsNext ? '1' : '2') + " to play";
     }
 
 
