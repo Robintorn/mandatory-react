@@ -105,7 +105,11 @@ export default class Game extends React.Component {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a];
+        if(squares[a] === 'X'){
+          return 'Player 1';
+        }else{
+          return 'Player 2';
+        }
       } 
     }
     return null;
