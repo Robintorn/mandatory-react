@@ -1,6 +1,5 @@
 import React from 'react';
 
-import {makeMove, newGame} from '../logic';
 import Tile from './tile';
 
 /*
