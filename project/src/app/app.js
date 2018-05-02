@@ -15,7 +15,7 @@ The App component should render an outer element with a `container` CSS class,
 and all tiles in an element with a `board` CSS class.
 */
 
-export default class Game extends React.Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +24,6 @@ export default class Game extends React.Component {
       class: Array(9).fill(null)
     }
   }
-  
 
   handleClick = (i) => {
     const squares = this.state.squares.slice();
@@ -52,7 +51,7 @@ export default class Game extends React.Component {
     return (
       <Tile 
       onClick={() => this.handleClick(i)} 
-      value={this.state.squares[i]} class={this.state.class[i]}/>
+      value={this.state.squares[i]} class={this.state.class[i]} />
     );
   }
 
